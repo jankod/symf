@@ -1,0 +1,14 @@
+{% extends 'club/_layout.html.twig' %}
+
+{% block body %}
+
+
+    Club index je ovo
+
+    User email:    {# dump( user ) #}
+
+<br>
+    {% if is_granted('ROLE_ADMIN') %}
+        Ovo vidi samo admin
+    {% endif %}
+{% endblock %}

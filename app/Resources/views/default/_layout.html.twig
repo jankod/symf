@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="hr">
+    <meta charset="UTF-8"/>
+    <title>{% block title %}TenisKlub početna{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet"
+          href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+</head>
+<body>
+
+{% block nav %}
+{% endblock %}
+<div class="container">
+
+
+    {% block body %}
+
+    {% endblock %}
+</div>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

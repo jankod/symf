@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="hr">
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet"
+          href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+</head>
+<body>
+
+{% block nav %}
+    {% include('club/_navigation.html.twig') %}
+    <div class="container" style="  ">
+            {% block body %}
+
+            {% endblock %}
+    </div>
+{% endblock %}
+
+
+
+
+{% block javascripts %}{% endblock %}
+
+
+</body>
+</html>

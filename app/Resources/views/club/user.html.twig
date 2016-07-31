@@ -1,0 +1,27 @@
+{% extends 'club/_layout.html.twig' %}
+
+{% block body %}
+    sasadsa
+    <a href="{{ path('mov') }}">nazada na movei</a>
+    {{ name|upper }}
+
+    <br>
+    <a href="{{ path('login') }}">login</a>
+<div>
+    {% for flash_message in app.session.flashBag.get('msg') %}
+        <div class="flash-notice">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+
+</div>
+
+    {% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+    <div style="max-width: 400px">
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'default/_layout.html.twig' %}
+
+{% block body %}
+
+    <h1>Pocetna stranica</h1>
+
+
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <p>Username: {{ app.user.username }}</p>
+        <a href="{{ path('logout') }}">Logout</a>
+        <br>
+        <a href="{{ path('clubIndex') }}">Club index</a>
+    {% else %}
+        <a href="{{ path('login') }}">login</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+
+    </style>
+{% endblock %}
