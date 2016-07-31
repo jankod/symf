@@ -39,7 +39,7 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="string", length=5)
      * @Assert\NotBlank()
-     * @Assert\Length(min="3", max="5")
+     * @Assert\Length(min=3, max=5)
      */
     private $username;
 

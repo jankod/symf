@@ -31,13 +31,19 @@ class Club
     /**
      * @ORM\Column(type="string", length=50)
      * @Assert\NotBlank()
-     * @Assert\Length(min="3", max="50")
+     * @Assert\Length(min=3, max=50)
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="text", length=500)
+     * @Assert\Length(min=3, max=500)
+     */
+    private $fullName;
+
 
     /**
-         * @ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="club", fetch="LAZY")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="club", fetch="LAZY")
      */
     private $users;
 
@@ -95,6 +101,22 @@ class Club
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFullName()
+    {
+        return $this->fullName;
+    }
+
+    /**
+     * @param mixed $fullName
+     */
+    public function setFullName($fullName)
+    {
+        $this->fullName = $fullName;
     }
 
 }

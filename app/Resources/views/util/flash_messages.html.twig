@@ -1,0 +1,26 @@
+{% extends "club/_layout.html.twig" %}
+
+{% block body %}
+
+    <div class="panel panel-default" style="margin-top: 20px;">
+        <div class="panel-heading">
+          <h2>Poruke</h2>
+        </div>
+        <div class="panel-body">
+
+
+            {% for type, flashes in app.session.flashbag.all %}
+                {% for flash in flashes %}
+                    <div class="alert alert-{{ type }} fade in">
+                        {{ flash|raw }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+
+
+        </div>
+        <!-- .panel-body -->
+    </div>
+
+{% endblock %}

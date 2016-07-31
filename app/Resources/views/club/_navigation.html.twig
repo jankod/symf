@@ -216,7 +216,7 @@
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="{{ path("logout") }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -240,7 +240,7 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="{{ path("clubIndex") }}"><i class="fa fa-dashboard fa-fw"></i> Početna</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -315,18 +315,22 @@
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
-                <li class="active">
-                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a class="active" href="blank.html">Blank Page</a>
-                        </li>
-                        <li>
-                            <a href="login.html">Login Page</a>
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
+                {% if is_granted('ROLE_SUPER_ADMIN') %}
+
+                    <li>
+                        <a href="#" style="color: darkred"><i class="fa fa-cogs fa-fw"></i> SUPER admin<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a style="color: darkred" href="{{ path('superAdminShowClubs') }}"><i class="fa fa-plus fa-fw" ></i> Klubovi </a>
+                            </li>
+                            <li>
+                                <a style="color: darkred" href="{{ path('superAdminAddClub') }}"><i class="fa fa-plus fa-fw" ></i> Dodaj klub</a>
+                            </li>
+
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                {% endif %}
             </ul>
         </div>
         <!-- /.sidebar-collapse -->

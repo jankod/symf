@@ -19,8 +19,9 @@ security:
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/club/admin, roles: ROLE_ADMIN }
         - { path: ^/club, roles: ROLE_PLAYER }
+        - { path: ^/club/admin, roles: ROLE_ADMIN }
+        - { path: ^/club/superadmin, roles: ROLE_SUPER_ADMIN }
 
     role_hierarchy:
         ROLE_ADMIN: ROLE_PLAYER
@@ -43,6 +44,7 @@ security:
                 check_path: login
                 csrf_token_generator: security.csrf.token_manager
                 default_target_path: clubIndex
+                success_handler: my_bundle.success.login.handler
             logout:
                 path: /logout
                 target: /

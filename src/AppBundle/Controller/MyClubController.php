@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @package AppBundle\Controller
  * @Route("/club")
  */
-class ClubController extends MyControler
+class MyClubController extends MyControler
 {
 
 
@@ -21,6 +21,16 @@ class ClubController extends MyControler
      * @Route("/index", name="clubIndex")
      */
     public function indexAction()
+    {
+
+        return $this->render("club/index.html.twig");
+
+    }
+
+    /**
+     * @Route("/", name="clubIndex2")
+     */
+    public function index2Action()
     {
 
         return $this->render("club/index.html.twig");

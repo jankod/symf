@@ -7,3 +7,7 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    my_bundle.success.login.handler:
+        class: AppBundle\Service\LoginSuccessHandler
+        arguments: ["@router", "@doctrine"]

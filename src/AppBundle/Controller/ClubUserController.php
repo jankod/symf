@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class UserController
@@ -63,7 +64,7 @@ class ClubUserController extends MyControler
             $m = $this->getDoctrine()->getManager();
             $m->persist($user);
             $m->flush();
-            return $this->redirectToRoute('users');
+            return $this->redirectToRoute('club_users');
         }
         return $this->render('club/user.html.twig', ["name" => "pero", 'form' => $form->createView()]);
 
